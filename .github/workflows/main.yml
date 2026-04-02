@@ -4,7 +4,7 @@ name: "Simple Github Actions workFlow Script"
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: "Running date command"
         run: date
 
-      - name: Getting OS details
+      - name: "Getting OS details"
         run: cat /etc/os-release
 
       - name: "Current directory before packer"
@@ -26,7 +26,6 @@ jobs:
         run: |
           wget https://releases.hashicorp.com/packer/1.15.0/packer_1.15.0_linux_amd64.zip
           unzip packer_1.15.0_linux_amd64.zip
-          sudo mv packer /usr/local/bin/
 
       - name: "Current directory after packer"
         run: |
